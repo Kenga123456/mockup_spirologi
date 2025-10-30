@@ -1,8 +1,9 @@
 body {
-  padding: 10px;
+  padding: 0;
+  margin: 0;
 }
 .title {
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
   margin: 20px;
 }
@@ -43,7 +44,9 @@ button {
 
 .shop-title {
   margin: 40px;
+  position: relative;
   text-align: center;
+  font-size: 28px;
 }
 
 .menu-container {
@@ -130,6 +133,7 @@ ul {
   .icon {
     /*viser det skjulte hamburger-ikonet*/
     display: block;
+    margin-left: 50px;
   }
 
   .menu-item {
@@ -145,6 +149,10 @@ ul {
 
   .menu-item:hover {
     transform: translateY(0px);
+  }
+  .icon {
+    position: absolute;
+    right: 60px;
   }
 }
 #images-container {
