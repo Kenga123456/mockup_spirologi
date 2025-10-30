@@ -124,13 +124,3 @@ ul {
     right: 60px;
   }
 }
-#images-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-#images-container img {
-  width: 200px !important;
-}
