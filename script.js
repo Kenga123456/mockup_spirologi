@@ -7,7 +7,8 @@ fetch("bilder.json")
       const child = document.createElement("div");
       const img = document.createElement("img");
 
-      img.src = `https://images.weserv.nl/?url=${encodeURIComponent( //for å fikse problem med at browser ikke liker http elns :(
+      img.src = `https://images.weserv.nl/?url=${encodeURIComponent(
+        //for å fikse problem med at browser ikke liker http elns :(
         src.replace(/^https?:\/\//, "")
       )}`;
 
@@ -17,3 +18,7 @@ fetch("bilder.json")
       imgContainer.appendChild(child);
     });
   });
+
+document.querySelector(".icon").addEventListener("click", function () {
+  document.querySelector("#menu").classList.toggle("show");
+});
