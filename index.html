@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spirologi</title>
+    <link rel="stylesheet" href="menustyles.css" />
+    <link rel="icon" href="favicon-32x32.png" />
+  </head>
+  <body>
+    <div class="menu-container">
+      <img src="images/sfhslogo.png" alt="" class="logo" />
+      <h1 class="shop-title">Spirologi</h1>
+      <ul class="" id="menu">
+        <li class="menu-item">
+          <a href="index.html" class="link hjem">Hjem</a>
+        </li>
+        <li class="menu-item">
+          <a href="bildested.html" class="link bildested">Bildested</a>
+        </li>
+        <li class="menu-item">
+          <a href="ammoprosjekt.html" class="link ammoprosjekt"
+            >Ammoprosjektet</a
+          >
+        </li>
+      </ul>
+      <img
+        class="icon"
+        src="images/menu-burger-horizontal-svgrepo-com.svg"
+        alt=""
+      />
+    </div>
+
+    <h1>Velkommen til Innovasjon & Teknologi og Forskerspire sin side!</h1>
+  </body>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .hjem {
+      border-bottom: 3px solid black;
+    }
+  </style>
+
+  <script>
+    document.querySelector(".icon").addEventListener("click", function () {
+      document.querySelector("#menu").classList.toggle("show");
+    });
+  </script>
+</html>

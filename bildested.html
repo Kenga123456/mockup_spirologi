@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spirologi</title>
+    <link rel="stylesheet" href="menustyles.css" />
+    <link rel="icon" href="favicon-32x32.png" />
+  </head>
+  <body>
+    <div class="menu-container">
+      <img src="images/sfhslogo.png" alt="" class="logo" />
+      <h1 class="shop-title">Spirologi</h1>
+      <ul class="" id="menu">
+        <li class="menu-item">
+          <a href="index.html" class="link hjem">Hjem</a>
+        </li>
+        <li class="menu-item">
+          <a href="bildested.html" class="link bildested">Bildested</a>
+        </li>
+        <li class="menu-item">
+          <a href="ammoprosjekt.html" class="link ammoprosjekt">Ammoprosjektet</a>
+        </li>
+      </ul>
+      </ul>
+      <img
+        class="icon"
+        src="images/menu-burger-horizontal-svgrepo-com.svg"
+        alt=""
+      />
+    </div>
+
+    <h1>Bilder</h1>
+    <div id="images-container"></div>
+
+    <script>
+      fetch("bilder.json")
+        .then((res) => res.json())
+        .then((images) => {
+          const imgContainer = document.getElementById("images-container");
+
+          images.forEach((src) => {
+            const child = document.createElement("div");
+            const img = document.createElement("img");
+
+            img.src = `https://images.weserv.nl/?url=${encodeURIComponent(
+              //for å fikse problem med at browser ikke liker http elns :(
+              src.replace(/^https?:\/\//, "")
+            )}`;
+
+            img.style.width = "100px";
+
+            child.appendChild(img);
+            imgContainer.appendChild(child);
+          });
+        });
+
+      document.querySelector(".icon").addEventListener("click", function () {
+        document.querySelector("#menu").classList.toggle("show");
+      });
+    </script>
+  </body>
+
+  <style>
+    #images-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    #images-container img {
+      width: 200px !important;
+    }
+    
+    .bildested {
+      border-bottom: 3px solid black;
+    }
+  </style>
+</html>
