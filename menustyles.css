@@ -21,12 +21,10 @@ body {
 .menu-container {
   display: flex;
   font-family: "Anton", sans-serif;
-  position: sticky;
   position: relative;
   top: 0px;
   z-index: 10;
-  padding: 0.7rem;
-  border: 0px solid black;
+  padding: 0.7rem;  
   background-color: #a7cae4;
   height: 80px;
   align-items: center;
@@ -35,7 +33,7 @@ body {
 
 #menu {
   display: flex;
-  gap: 1.3rem;
+  gap: 1.5rem;
 }
 
 .menu-item {
@@ -73,26 +71,25 @@ ul {
 @media (max-width: 700px) {
   /*adjust px depending on how many menu elements*/
   #menu {
-    display: none; /*hide the menu by default before the user has touched the menu button*/
-    flex-direction: column; /*make the menu items vertical instead of horisontal*/
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
     position: absolute;
-    top: 86px;
-    right: 0px;
+    top: 87px;
+    right: 1px;
     background-color: rgb(255, 255, 255);
-    width: 35%;
-    text-align: center;
-    padding-bottom: 0px;
-    justify-content: center;
-    align-items: center;
-    padding-inline-start: 0; /* dette og row gap hjelper med å sentrere meny greiene og holde riktig avstand mellom me */
+    width: fit-content;
+
     row-gap: 0px;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
   }
 
   #menu.show {
-    display: flex;
-    /* overskriver display none når brukeren trykker på hamburger-ikonet */
+    max-height: 180px;
   }
 
   .menu-item {
@@ -109,7 +106,7 @@ ul {
   .menu-item {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .link {
@@ -119,6 +116,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
   }
 
   .icon {
